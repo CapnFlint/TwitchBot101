@@ -7,8 +7,8 @@ class MessageManager(threading.Thread):
 
     def __init__(self, bot):
         threading.Thread.__init__(self)
+        self.setDaemon(True)
         self.connMgr = bot.connMgr
-        self.daemon = True
 
         self.messages = [
             "Hello World!",

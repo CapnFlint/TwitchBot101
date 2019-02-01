@@ -48,6 +48,7 @@ def get_viewers(include_mods = True):
         logging.error("get_viewers: urllib2 error")
         return {}
 
+#NOTE: if someone upgrades a sub, they will show in multiple lists
 def get_subscribers(offset=0, subs=[]):
     url = "https://api.twitch.tv/kraken/channels/{0}/subscriptions?limit=100&direction=desc&offset={1}"\
             .format(config['twitch']['channel_id'], offset)
